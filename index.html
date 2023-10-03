@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice Game</title>
+    <link
+      rel="shortcut icon"
+      href="./images/dice-logo.png"
+      type="image/x-icon"
+    />
+
+    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <!-- Tailwind -->
+
+    <link rel="stylesheet" href="./dist/output.css" />
+  </head>
+  <body>
+    <!-- Home Container -->
+    <div
+      class="flex bg-gradient-to-r from-cyan-50 to-emerald-300 h-screen items-center justify-center overflow-hidden box-border"
+    >
+      <!-- Game Outer Card -->
+      <div
+        class="flex rounded-xl shadow-xl md:m-2 md:h-4/5 md:w-3/5 w-[350px] m-1 h-11/12 relative"
+      >
+        <!-- Player1 -->
+        <div
+          class="player1 flex flex-col md:pt-5 md:pb-10 md:px-4 pt-2 pb-4 px-1 rounded-l-xl bg-pink-200 items-center justify-between w-1/2"
+        >
+          <!-- Upper user container -->
+          <div
+            class="upper-user-card flex flex-col items-center justify-center"
+          >
+            <lord-icon
+              src="https://cdn.lordicon.com/vusrdugn.json"
+              trigger="hover"
+              style="width: 100px; height: 100px"
+              class="rounded-full bg-green-300 live1 shadow-2xl"
+            >
+            </lord-icon>
+            <h1 class="text-lg md:text-2xl font-bold mb-5">Player 1</h1>
+            <p
+              class="total_Score text-3xl font-semibold md:text-6xl mb-5 totalscore_0"
+            >
+              0
+            </p>
+          </div>
+          <!-- Lower user container -->
+          <div
+            class="lower-user-card flex flex-col items-center justify-center"
+          >
+            <div
+              class="data1 flex flex-col items-center justify-center bg-teal-500 rounded-lg shadow-2xl text-white w-24 md:w-48 space-y-2 py-4"
+            >
+              <h1 class="text-xl md:text-2xl font-semibold">Current</h1>
+              <p class="text-lg md:text-xl font-bold currscore_0">0</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Player2 -->
+        <div
+          class="player2 flex flex-col md:pt-5 md:pb-10 md:px-4 pt-2 pb-4 px-1 rounded-r-xl bg-pink-400 items-center justify-between h-full w-1/2"
+        >
+          <!-- Upper user container -->
+          <div
+            class="upper-user-card flex flex-col items-center justify-center"
+          >
+            <lord-icon
+              src="https://cdn.lordicon.com/vusrdugn.json"
+              trigger="hover"
+              style="width: 100px; height: 100px"
+              class="live2 rounded-full"
+            >
+            </lord-icon>
+            <h1 class="text-lg md:text-2xl font-bold mb-5">Player 2</h1>
+            <p
+              class="total_Score text-3xl font-semibold md:text-6xl mb-5 totalscore_1"
+            >
+              0
+            </p>
+          </div>
+          <!-- Lower user container -->
+          <div
+            class="lower-user-card flex flex-col items-center justify-center"
+          >
+            <div
+              class="flex flex-col items-center justify-center bg-teal-500 data2 text-white w-24 md:w-48 space-y-2 py-4"
+            >
+              <h1 class="text-xl md:text-2xl font-semibold">Current</h1>
+              <p class="text-lg md:text-xl font-bold currscore_1">0</p>
+            </div>
+          </div>
+        </div>
+        <!-- Buttons -->
+        <div
+          class="button-container absolute w-full h-full flex flex-col items-center justify-around"
+        >
+          <!-- Reset Button -->
+          <button
+            class="reset px-3 py-2 rounded-lg bg-white/40 focus:outline-none flex space-x-2 items-center justify-center"
+          >
+            <lottie-player
+              src="https://assets3.lottiefiles.com/packages/lf20_nzk92xfr.json"
+              background="transparent"
+              speed="1"
+              style="width: 30px; height: 30px"
+              hover
+            >
+            </lottie-player>
+          </button>
+          <!-- dice container -->
+          <div class="dicecontainer w-[70px] h-[70px]">
+            <img
+              src="./images/dice-logo.png"
+              alt="dice"
+              class="hidden dice w-[70px]"
+            />
+            <div class="animatedice hidden">
+              <lottie-player
+                src="https://assets5.lottiefiles.com/packages/lf20_j9iomtgp.json"
+                background="transparent"
+                speed="1"
+                style="width: 70px; height: 70px"
+                loop
+                hover
+                autoplay
+              ></lottie-player>
+            </div>
+          </div>
+          <!-- bottom Button -->
+          <div
+            class="bottombuttons flex flex-col items-center justify-evenly space-y-4"
+          >
+            <div class="rolldice hidden">
+              <lottie-player
+                src="https://assets3.lottiefiles.com/packages/lf20_Wy80jjKz4n.json"
+                background="transparent"
+                speed="1"
+                style="width: 100px; height: 70px"
+                loop
+                autoplay
+                hover
+              ></lottie-player>
+            </div>
+            <button
+              class="flex space-x-2 items-center justify-center roll px-3 py-2 rounded-lg bg-white/40 focus:outline-none hover:scale-110 transition-all duration-300"
+            >
+              <img src="./images/roll.png" alt="roll" class="w-5 md:w-6" />
+              <span class="text-sm md:text-lg font-semibold">Roll</span>
+            </button>
+
+            <button
+              class="flex space-x-2 items-center justify-center hold px-3 py-2 rounded-lg bg-white/40 focus:outline-none hover:scale-110 transition-all duration-300"
+            >
+              <img src="./images/pause.png" alt="pause" class="w-5 md:w-6" />
+              <span class="text-sm md:text-lg font-semibold">Hold</span>
+            </button>
+          </div>
+        </div>
+        <!-- Winning -->
+        <div
+          class="winning absolute bg-transparent w-full justify-center items-center bottom-0 flex-col hidden"
+        >
+          <p
+            class="winningplayer text-4xl text-green-700 bg-transparent font-mono font-bold"
+          >
+            You won this match
+          </p>
+          <lottie-player
+            src="https://assets7.lottiefiles.com/packages/lf20_E3m1qQ.json"
+            background="transparent"
+            speed="1"
+            style="width: 300px; height: 240px"
+            loop
+            autoplay
+          ></lottie-player>
+        </div>
+      </div>
+    </div>
+    <!-- Script file -->
+    <script src="./Scripts/scripts.js"></script>
+  </body>
+</html>
